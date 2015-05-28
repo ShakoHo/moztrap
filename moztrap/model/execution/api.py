@@ -97,6 +97,7 @@ class RunResource(ModelResource):
             "productversion": ALL_WITH_RELATIONS,
             "status": "exact",
             "series": ALL_WITH_RELATIONS,
+            "name": "contains"
         }
         authentication = MTApiKeyAuthentication()
         authorization = ReportResultsAuthorization()
