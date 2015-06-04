@@ -91,7 +91,7 @@ class RunResource(ModelResource):
             "productversion",
             "environments",
             "runcaseversions",
-            "is_series",
+            "is_series"
             ]
         filtering = {
             "productversion": ALL_WITH_RELATIONS,
@@ -373,6 +373,7 @@ class ResultViewResource(ModelResource):
         result = bundle.obj
         bundle.data["run"] = result.runcaseversion.run.id
         bundle.data["run_name"] = result.runcaseversion.run.name
+        bundle.data["case_name"] = result.runcaseversion.caseversion.name
         if result.runcaseversion.run.series == None:
             bundle.data["run_series"] = None
         else:
